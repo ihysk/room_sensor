@@ -1,0 +1,23 @@
+{
+  "name": "room_sensor",
+  "version": "1.0.0",
+  "description": "room sensor with bme280 on raspberry pi",
+  "main": "bme280.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihysk/room_sensor.git"
+  },
+  "author": "ihysk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ihysk/room_sensor/issues"
+  },
+  "homepage": "https://github.com/ihysk/room_sensor#readme",
+  "dependencies": {
+    "m2x": "^4.3.0",
+    "node-bme280": "^0.1.3"
+  }
+}
