@@ -8,7 +8,7 @@ const t = new twit({
   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
   access_token: process.env.TWITTER_ACCESS_TOKEN_KEY,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-})
+});
 
 const key = process.env.M2X_KEY;
 const deviceId = process.env.M2X_DEVICEID;
@@ -25,12 +25,12 @@ barometer.begin(function(err) {
   console.info('barometer running');
 
   barometer.readPressureAndTemparature(function(err, pressure, temperature, humidity) {
-    const str = `temp:${temperature.toFixed(2)}℃  pressur${(pressure / 100).toFixed(2)}hPa  hum:${humidity.toFixed(2)}%`
+    const str = `temp:${temperature.toFixed(2)}℃  pressur${(pressure / 100).toFixed(2)}hPa  hum:${humidity.toFixed(2)}%`;
     console.info(str);
 
-    t.post('statuses/update', { status: str }, function(err, data) {
-      console.log(data)
-    })
+    // t.post('statuses/update', { status: str }, function(err, data) {
+    //   console.log(data);
+    // });
 
     m2x.devices.setStreamValue(deviceId, tempStreamId, { value: temperature.toFixed(2) }, function(response) {
       console.log(response.json);
